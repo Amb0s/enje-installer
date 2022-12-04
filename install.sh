@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installs distribution packages
-pacman -S --noconfirm --needed base-devel git ufw neofetch firefox \
+sudo pacman -S --noconfirm --needed base-devel git ufw neofetch firefox \
     torbrowser-launcher firefox torbrowser-launcher cmus mpv transmission-gtk \
     thunar thunar-archive-plugin neovim pacman-contrib aegisub obs-studio blender \
     gimp inkscape btop weechat profanity qtox keepassxc monero-gui veracrypt gamemode \
@@ -34,13 +34,13 @@ yay -S gnome-browser-connector lf mangohud mednaffe packwiz-git bottles xmrig-cu
 source ~/enje-installer/configure.sh
 
 # Remove useless distribution packages
-pacman -Rns --noconfirm baobab cheese eog epiphany gedit gnome-boxes gnome-backgrounds \
+sudo pacman -Rns --noconfirm baobab cheese eog epiphany gedit gnome-boxes gnome-backgrounds \
     gnome-calculator gnome-contacts gnome-logs gnome-maps gnome-music gnome-photos \
     gnome-remote-desktop gnome-software gnome-software-packagekit-plugin \
     gnome-system-monitor gnome-weather simple-scan malcontent orca vino totem vim htop
 
 # Remove orphans
-pacman -Rns --noconfirm $(pacman -Qtdq)
+sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 
 # Exit message
 printf "\x1b[31mYou can now reboot! See you again, have a nice day!\x1b[0m\n"
