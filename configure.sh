@@ -1,4 +1,4 @@
-# Copy configuration
+# Change directory
 cd
 cd enje-installer
 
@@ -10,8 +10,9 @@ while IFS=, read -r link name; do
     sudo curl "$link" -o "$DESTINATION/$name"; 
 done < $FILE
 
-cp -r .config/wal/colorschemes/dark/ ~/.config
-cp -r .local/bin/ ~/.local
+# Copy configuration
+cp -r .config/wal/colorschemes/dark/ ~/.config/wal/colorschemes/dark/
+cp -r .local/bin/ ~/.local/bin/
 chmod +x ~/.local/bin/ctheme
 
 

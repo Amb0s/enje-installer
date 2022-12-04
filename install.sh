@@ -40,7 +40,7 @@ pacman -Rns --noconfirm baobab cheese eog epiphany gedit gnome-boxes gnome-backg
     gnome-system-monitor gnome-weather simple-scan malcontent orca vino totem vim htop
 
 # Remove orphans
-sudo pacman -Rns --noconfirm $(pacman -Qtdq)
+pacman -Rns --noconfirm $(pacman -Qtdq)
 
 # Exit message
 printf "\x1b[31mYou can now reboot! See you again, have a nice day!\x1b[0m\n"
