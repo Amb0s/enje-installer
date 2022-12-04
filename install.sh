@@ -28,7 +28,7 @@ sudo pacman -S --noconfirm neovim
 sudo pacman -S --noconfirm pacman-contrib
 
 # aegisub, obs-studio, gimp & inkscape
-sudo pacman -S --noconfirm aegisub obs-studio gimp inkscape
+sudo pacman -S --noconfirm aegisub obs-studio blender gimp inkscape
 
 # btop
 sudo pacman -S --noconfirm btop
@@ -158,6 +158,9 @@ yay -S adw-gtk3
 
 #
 yay -S tilde
+
+#
+yay -S unityhub
 
 # + krypto, pop-shell, date menu format, gamemode
 yay -S gnome-shell-extension-vitals gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-panel gnome-shell-extension-appindicator-git gnome-shell-extension-openweather
