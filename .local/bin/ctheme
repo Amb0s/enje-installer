@@ -1,0 +1,65 @@
+#!/bin/bash
+
+BACKGROUND_DIRECTORY="/usr/share/backgrounds/gnome"
+THEME_LIST="enje youmu goddess wasp aya"
+
+change_background () {
+    gsettings set org.gnome.desktop.background picture-uri $1
+    gsettings set org.gnome.desktop.background picture-uri-dark $1
+}
+
+change_theme () {
+    wal -f ~/.config/wal/colorschemes/dark/$1.json -b $2
+    papirus-folders -C $3
+    # gradient: Enje, Youmu, Goddess, Wasp, Aya
+    
+    # papirus-folders -C red
+    # wal -i /usr/share/backgrounds/gnome/enje.jpg -b 242424 --saturate 0.75 -n
+
+    # papirus-folders -C magenta
+    # wal -i /usr/share/backgrounds/gnome/youmu.jpg -b 242424 --saturate 0.75 -n
+
+    # papirus-folders -C paleorange
+    # wal -i /usr/share/backgrounds/gnome/goddess.png -b 242424 --saturate 0.75 -n
+}
+
+PS3="Select background: "
+select background in $(ls -A $BACKGROUND_DIRECTORY)
+do
+    if [ -n "$background" ]; then
+        change_background $BACKGROUND_DIRECTORY/$background
+        break
+    else
+        echo "Invalid background."
+    fi
+done
+ 
+PS3="Select theme: "
+select theme in $THEME_LIST
+do
+    case $theme in
+        #enje)
+            #change_theme "enje" "242424" "red"
+            #break
+            #;;
+        #youmu)
+            #change_theme "youmu" "242424" "magenta"
+            #break
+            #;;
+        #goddess)
+            #change_theme "goddess" "242424" "paleorange"
+            #break
+            #;;
+        wasp)
+            change_theme "wasp" "242424" "yellow"
+            break
+            ;;
+        aya)
+            change_theme "aya" "242424" "deeporange"
+            break
+            ;;
+        *)
+            echo "Invalid theme."
+            ;;
+    esac
+done
