@@ -1,47 +1,42 @@
 #!/bin/bash
 
-# Installs distribution packages
-sudo pacman -S --noconfirm --needed base-devel ufw neofetch firefox \
-    torbrowser-launcher cmus mpv transmission-gtk \
+# Removes useless distribution packages.
+sudo pacman -Rns --noconfirm baobab cheese eog epiphany gnome-backgrounds \
+    gnome-calculator gnome-contacts gnome-logs gnome-maps gnome-music gnome-photos \
+    gnome-remote-desktop nautilus gnome-text-editor gnome-console gnome-software \
+    gnome-system-monitor gnome-weather simple-scan malcontent orca totem vim htop
+
+# Installs distribution packages.
+sudo pacman -S --noconfirm --needed base-devel ufw neofetch firefox exa \
+    torbrowser-launcher cmus milkytracker mat2 discord mpv hugo transmission-gtk \
     thunar thunar-archive-plugin neovim pacman-contrib aegisub obs-studio blender \
     gimp inkscape btop weechat profanity qtox keepassxc monero-gui veracrypt gamemode \
-    reflector newsboat yt-dlp jdk8-openjdk intellij-idea-community-edition exa mednafen \
-    bleachbit python-pywal tmux gnome-themes-extra bc adw-gtk3 lm_sensors scrot maim \
-    steam sxiv tumbler ffmpegthumbnailer adobe-source-code-pro-fonts \
-    awesome-terminal-fonts ttf-bitstream-vera ttf-dejavu ttf-liberation ttf-opensans \
-    ttf-iosevka-nerd ttf-ubuntu-font-family ttf-liberation terminus-font ttf-cascadia-code \
-    ttf-fira-code ttf-hack-nerd
+    reflector newsboat yt-dlp krita darktable intellij-idea-community-edition mednafen \
+    bleachbit shotcut python-pywal tmux gnome-themes-extra alacritty bc maim \
+    steam tumbler w3m jdk8-openjdk ffmpegthumbnailer adobe-source-code-pro-fonts \
+    awesome-terminal-fonts ttf-bitstream-vera ttf-dejavu  ttf-liberation ttf-opensans \
+    ttf-iosevka-nerd ttf-ubuntu-font-family ttf-liberation ttf-cascadia-code \
+    ttf-fira-code ttf-hack-nerd terminus-font sxiv #amd-ucode
 
-# Add jp_JP to LOCALES
-
-# Installs yay (AUR helper)
+# Installs AUR helper.
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
 # Installs AUR packages
 yay -S gnome-browser-connector lf mangohud mednaffe packwiz-git bottles xmrig-cuda \
-    xmrig-donateless inxi dosbox-x tmsu-git papirus-folders xcursor-simp1e \
+    xmrig-donateless inxi stagit dosbox-x tmsu-git papirus-folders xcursor-simp1e \
     mpv-sponsorblock-minimal-git protonup-git gradience adw-gtk3 tilde unityhub \
-    gnome-shell-extension-vitals gnome-shell-extension-arc-menu \
+    gnome-shell-extension-vitals czkawka-cli gnome-shell-extension-arc-menu \
     gnome-shell-extension-dash-to-panel gnome-shell-extension-appindicator-git \
-    gnome-shell-extension-openweather nerd-fonts-go-mono \
-    nerd-fonts-inconsolata nerd-fonts-jetbrains-mono nerd-fonts-mononoki \
+    gnome-shell-extension-openweather gallery-dl bombadillo nerd-fonts-go-mono \
+    jdk17-temurin nerd-fonts-inconsolata nerd-fonts-jetbrains-mono nerd-fonts-mononoki \
     nerd-fonts-roboto-mono ttf-ms-fonts ttf-vista-fonts ttf-tahoma ttf-segoe-ui-variable
 
-# fc-cache -fsv
-
-# Copies config files
-#source ~/enje-installer/configure.sh
-
-# Remove useless distribution packages
-sudo pacman -Rns --noconfirm baobab cheese eog epiphany gedit gnome-boxes gnome-backgrounds \
-    gnome-calculator gnome-contacts gnome-logs gnome-maps gnome-music gnome-photos \
-    gnome-remote-desktop gnome-software gnome-software-packagekit-plugin \
-    gnome-system-monitor gnome-weather simple-scan malcontent orca vino totem vim htop
-
-# Remove orphans
+# Removes orphans.
 sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 
-# Exit message
-printf "\x1b[31mYou can now reboot! See you again, have a nice day!\x1b[0m\n"
+# Copies config files.
+source ~/enje-installer/configure.sh
+
+

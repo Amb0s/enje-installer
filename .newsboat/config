@@ -1,0 +1,16 @@
+max-items 100
+
+auto-reload no
+reload-threads 100
+
+confirm-mark-feed-read no
+
+browser firefox
+macro , open-in-browser
+player "mpv"
+macro m set browser "mpv %u"; open-in-browser ; set browser firefox
+
+highlight feedlist "---.*---" color8 default bold
+highlight feedlist ".*0/0.." default default invis
+
+include ~/.newsboat/2814

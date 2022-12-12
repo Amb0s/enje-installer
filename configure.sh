@@ -1,6 +1,9 @@
-# Change directory
-cd
-cd enje-installer
+# Regenerates the fonts cache.
+sudo fc-cache -fsv
+
+# Adds Japanese locales.
+echo "ja_JP.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+sudo locale-gen
 
 # Import backgrounds
 FILE="backgrounds.csv"

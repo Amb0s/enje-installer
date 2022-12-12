@@ -1,0 +1,82 @@
+# Playback
+
+unbind -f common b
+unbind -f common space
+bind common space player-pause
+unbind -f common x
+unbind -f common z
+unbind -f common v
+
+bind -f common q player-prev
+bind -f common d player-next
+
+unbind -f common ]
+unbind -f common [
+unbind -f common }
+unbind -f common {
+
+unbind -f common ,
+unbind -f common .
+
+unbind -f common mlb_click_bar
+unbind -f common mouse_scroll_up_bar
+unbind -f common mouse_scroll_down_bar
+
+# Setting toggles
+
+unbind -f common m
+unbind -f common M
+unbind -f common o
+bind -f common R toggle repeat_current
+bind -f common t toggle show_remaining_time
+unbind -f common ^R
+unbind -f common f
+
+# Commands
+
+bind -f common Q quit
+unbind -f common ^C
+unbind -f common I
+bind common f echo {}
+
+# View/window navigation
+
+bind -f common 2 view playlist
+bind -f common 3 view browser
+bind -f common 4 view filters
+bind -f common 5 view settings
+unbind -f common 6
+unbind -f common 7
+
+unbind -f common mouse_scroll_up_title
+unbind -f common mouse_scroll_down_title
+
+unbind -f common ^L
+
+# Navigation
+
+unbind -f common ^Y
+unbind -f common ^E
+unbind -f common ^B
+unbind -f common ^F
+unbind -f common ^U
+unbind -f common ^D
+
+unbind -f common mouse_scroll_up
+unbind -f common mouse_scroll_down
+
+# Selection
+unbind -f common mlb_click_selected
+bind -f common c win-toggle
+
+bind -f common u update-cache
+bind -f common U update-cache -f
+
+# Filters
+
+fset 90s=date>=1990&date<2000
+fset eurobeat=genre="Eurobeat"
+fset unheard=play_count=0
+fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+fset mp3=filename="*.mp3"
+fset flac=filename="*.flac"
