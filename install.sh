@@ -24,14 +24,15 @@ cd yay
 makepkg -si
 
 # Installs AUR packages
-yay -S gnome-browser-connector lf mangohud mednaffe packwiz-git bottles xmrig-cuda \
-    xmrig-donateless inxi stagit dosbox-x tmsu-git papirus-folders xcursor-simp1e \
+yay -S gnome-browser-connector-git lf-git mangohud mednaffe packwiz-git xmrig-cuda \
+    xmrig-donateless inxi stagit dosbox-x tmsu papirus-folders xcursor-simp1e \
     mpv-sponsorblock-minimal-git protonup-git gradience adw-gtk3 tilde unityhub \
-    gnome-shell-extension-vitals czkawka-cli gnome-shell-extension-arc-menu \
+    gnome-shell-extension-vitals-git bottles gnome-shell-extension-arc-menu \
     gnome-shell-extension-dash-to-panel gnome-shell-extension-appindicator-git \
-    gnome-shell-extension-openweather gallery-dl bombadillo nerd-fonts-go-mono \
+    gnome-shell-extension-openweather-git gallery-dl bombadillo nerd-fonts-go-mono \
     jdk17-temurin nerd-fonts-inconsolata nerd-fonts-jetbrains-mono nerd-fonts-mononoki \
-    nerd-fonts-roboto-mono ttf-ms-fonts ttf-vista-fonts ttf-tahoma ttf-segoe-ui-variable
+    nerd-fonts-roboto-mono ttf-ms-fonts ttf-vista-fonts ttf-tahoma ttf-segoe-ui-variable \
+    gnome-shell-extension-disable-unredirect-git gnome-shell-extension-pop-shell-git
 
 # Removes orphans.
 sudo pacman -Rns --noconfirm $(pacman -Qtdq)
