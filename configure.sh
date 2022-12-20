@@ -7,14 +7,16 @@ sudo locale-gen
 
 # Import backgrounds
 FILE="./backgrounds.csv"
-DESTINATION="/usr/share/backgrounds/gnome"
+DESTINATION="$HOME/Pictures/Wallpapers"
 
 while IFS=, read -r link name; do 
-    sudo curl "$link" -o "$DESTINATION/$name"; 
+    curl "$link" -o "$DESTINATION/$name"; 
 done < $FILE
 
 # Copy configuration
-cp -r ./.config/wal/colorschemes/dark/ ~/.config/wal/colorschemes/dark/
-cp -r ./.local/bin/ ~/.local/bin/
+mkdir -p ~/.config/wal/colorschemes/dark/
+cp -r ./.config/wal/colorschemes/dark/ ~/.config/wal/colorschemes/
+cp -r ./.local/bin/ ~/.local/
 chmod +x ~/.local/bin/ctheme
+export PATH="$PATH:$HOME/.local/bin"
 
