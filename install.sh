@@ -15,7 +15,7 @@ sudo pacman -S --noconfirm --needed base-devel gnome-terminal ufw neofetch \
     bleachbit fwupd man-db man-pages shotcut python-pywal tmux gnome-themes-extra bc \
     steam tumbler lynx jdk8-openjdk ffmpegthumbnailer adobe-source-code-pro-fonts \
     awesome-terminal-fonts ttf-bitstream-vera ttf-dejavu ttf-liberation ttf-opensans \
-    ttf-iosevka-nerd ttf-ubuntu-font-family ttf-liberation ttf-cascadia-code \
+    docker ttf-iosevka-nerd ttf-ubuntu-font-family ttf-liberation ttf-cascadia-code \
     ttf-fira-code ttf-hack-nerd terminus-font task sxiv amd-ucode nvidia-dkms #gamescope
 
 # Installs AUR helper.
